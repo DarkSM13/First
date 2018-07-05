@@ -1,3 +1,5 @@
+package SM;
+
 class Person{
 	private String Name;
 	private String Surname;
@@ -27,6 +29,10 @@ public class App {
 		Person ja = new Person("Szymon","Margañski",21);
 		
 		System.out.println(ja.getName());
+		ja.setName("Maciej");
+		
+		System.out.println(ja.getName());
+		
 		
 
 	}
