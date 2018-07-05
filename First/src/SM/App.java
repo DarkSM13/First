@@ -11,13 +11,13 @@ class Person{
 	}
 	public String getName() {return this.Name;}
 	
-	public void setSurname(String Surnaame) {
+	public void setSurname(String Surname) {
 		this.Surname=Surname;
 	}
 	public String getSurname() {return this.Surname;}	
 	
 	Person(String Name,String Surname,int age) {this.Name=Name;this.Surname=Surname;this.age=age;}
-	
+	public void watchAge() {System.out.print(this.age);}
 }
 
 
