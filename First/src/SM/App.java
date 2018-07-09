@@ -1,30 +1,22 @@
 package SM;
 
-
+/*
+ * private - only within same class
+ * public - anywher
+ * protected - subclass, and same package
+ * no modifier - same as above
+ */
 
 public class App {
 
 	
 	public static void main(String[] args) {
 		
-		Machine mach1 = new Machine();			
-		mach1.start();
-		
-		Person person1 = new Person("Szymon");		
-		person1.greet();
-		
-		Info info1 = new Machine();
-		
-		info1.showInfo();
-
-		Info info2 = person1;
-		
-		info2.showInfo();
-		outputInfo(mach1);
-		outputInfo(person1);
+		Plant plant = new Plant();
+		System.out.println(plant.name);
+		System.out.println(plant.ID);
+		System.out.println(plant.type);
 	}
 
-	private static void outputInfo(Info info) {
-		info.showInfo();
-	}
+	
 }
