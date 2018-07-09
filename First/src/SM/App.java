@@ -91,7 +91,7 @@ public class App {
 		.append("\n")
 		.append("I'm an 3");
 		System.out.println(s.toString());
-		
+		/*
 		Pupil ja = new Pupil("Szymon","Margañski",21,148857);
 		
 		StringBuilder str = new StringBuilder();
@@ -102,6 +102,23 @@ public class App {
 		
 		ja.setmark(1.5f);ja.setmark(2.5f);
 		if(ja.isEmpty())System.out.println(ja.average());
+		*/
+		
+		int g=14;
+		
+		System.out.printf("My letter is %d",g);
+		
+		
+		for(int i=0;i<10;i++)
+			System.out.printf("%2d: My text\n", i);
+		
+		
+
+		for(int i=0;i<10;i++)
+			System.out.printf("%3.4f: My text\n", (float)i);
+		
+		
+		
 		
 		
 	}
