@@ -33,7 +33,11 @@ public class App {
 		
 		System.out.println(ja.getName());
 		
+		System.out.println(ja.getName());
 		
+		String string = ja.getSurname();
+		
+		System.out.println(string);
 
 	}
 
