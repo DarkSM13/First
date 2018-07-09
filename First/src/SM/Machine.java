@@ -1,9 +1,10 @@
 package SM;
 
-public class Machine {
+public class Machine implements Info,IStartable {
 
 	private boolean working=false;
-	protected String name = "Machine Type 1";
+	private int id=7;
+
 	public void start() {
 		System.out.println("Start machine");
 		working=true;
@@ -11,6 +12,11 @@ public class Machine {
 	public void stop() {
 		System.out.println("Stop machine");
 		working=false;
+	}
+
+	public void showInfo() {
+		System.out.println("Machine ID = "+id);
+		
 	}
 
 	
