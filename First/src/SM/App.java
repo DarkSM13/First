@@ -1,5 +1,7 @@
 package SM;
 
+import java.time.LocalDate;
+
 class Person{
 	private String Name;
 	private String Surname;
@@ -20,25 +22,88 @@ class Person{
 	public void watchAge() {System.out.print(this.age);}
 }
 
+class Pupil extends Person{
+
+	Pupil(String Name, String Surname, int age,int indeks) {
+		super(Name, Surname, age);
+		this.indeks=indeks;	
+		this.i=0;
+				
+		
+	}
+	private int indeks;
+	private float[] marks = new float[10];
+	private int i;
+	public void setmark(float l) {
+		
+		marks[i]=l;
+		i++;		
+		
+		
+	}
+	
+	public int getIndeks() {return this.indeks;}
+	public void setIndeks(int indeks){this.indeks=indeks;}
+	
+	public void setindeks(int indeks) {this.indeks=indeks;}
+	public float[] getmarks() {return this.marks;}
+	public boolean isEmpty() {if(i==0)return false; return true;}
+	public float average() {
+		
+		if(i==0) return 0;
+		else {
+			double sum=0;
+			for(float x:marks)sum+=x;
+			
+			return (float) (sum/i);
+			
+		}
+		
+	}
+}
 
 
 public class App {
 
+	
 	public static void main(String[] args) {
+		
+		LocalDate time = LocalDate.now();
+		
+		//System.out.println(time.getDayOfMonth()+" "+time.getMonth());
+		
+		String info="";
+		info+="My name is S.";
+		info+="\n";
+		info+="I'm an 1";
+					
+		System.out.println(info);
 
-		Person ja = new Person("Szymon","Margañski",21);
+		StringBuilder sb= new StringBuilder("");
+		sb.append("My name is S.");
+		sb.append("\n");
+		sb.append("I'm an 2");
+		System.out.println(sb.toString());
 		
-		System.out.println(ja.getName());
-		ja.setName("Maciej");
+		StringBuilder s= new StringBuilder();
 		
-		System.out.println(ja.getName());
+		s.append("My name is S.")
+		.append("\n")
+		.append("I'm an 3");
+		System.out.println(s.toString());
 		
-		System.out.println(ja.getName());
+		Pupil ja = new Pupil("Szymon","Margañski",21,148857);
 		
-		String string = ja.getSurname();
+		StringBuilder str = new StringBuilder();
 		
-		System.out.println(string);
-
+		str.append(ja.getName()).append("\t").append(ja.getSurname());
+		
+		System.out.println(str.toString());
+		
+		ja.setmark(1.5f);ja.setmark(2.5f);
+		if(ja.isEmpty())System.out.println(ja.average());
+		
+		
 	}
 
 }
