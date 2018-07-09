@@ -1,51 +1,41 @@
 package SM;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+class Machine{
+	
+	public void start() {
+		System.out.println("Start machine");
+	}
+	
+}
+
+interface Plant{
+	public void grow();
+}
 
 public class App {
 
 	
 	public static void main(String[] args) {
 	
+		Machine machine1 = new Machine() {
+			@Override public void start() {
+				System.out.println("New start machine");
+			}
+		};
+		
+		machine1.start();
 	
-	ArrayList list = new ArrayList();
-	
-	list.add("apple");
-	list.add("orange");
-	list.add("banana");		
-	
-	String fruit =(String)list.get(1);
-	
-	System.out.println(fruit.toString());
-	
-	//////////////////////////////////
-	ArrayList<String> strings = new ArrayList<String>();
-	
-	strings.add("cat");
-	strings.add("dog");
-	strings.add("alligator");
-	
-	String animal=strings.get(1);
-	System.out.println(animal);
-	///////////////////////////////////////////////////////
-	
-	ArrayList<Animal> someList = new ArrayList<>();
-	Animal snake=new Animal("Snake");
-	
-	Animal dog=new Animal("dog");
-	
-	someList.add(snake);
-	someList.add(dog);
-	
-	Animal find = someList.get(0);
-	System.out.println(find.getName());
+		Plant plant1 = new Plant() {
 
-	//////////////////////////////////////////////////////////
-	
-	
-	
-	
+			@Override
+			public void grow() {
+				System.out.println("Plant growing");
+				
+			}
+			
+		};
+		
+		plant1.grow();
+		
 	}
 }
