@@ -1,41 +1,31 @@
 package SM;
 
-class Machine{
-	
-	public void start() {
-		System.out.println("Start machine");
-	}
-	
-}
-
-interface Plant{
-	public void grow();
-}
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 public class App {
 
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException {
 	
-		Machine machine1 = new Machine() {
-			@Override public void start() {
-				System.out.println("New start machine");
-			}
-		};
-		
-		machine1.start();
 	
-		Plant plant1 = new Plant() {
-
-			@Override
-			public void grow() {
-				System.out.println("Plant growing");
-				
-			}
-			
-		};
 		
-		plant1.grow();
+		String filename="C:\\Users\\Developer12\\Desktop\\example.txt";
 		
+		File textFile = new File(filename);
+		
+		System.out.println(textFile.exists());
+		
+		Scanner in = new Scanner(textFile);
+		
+		while(in.hasNextLine()) {
+			String line = in.nextLine();
+			System.out.println(line.toString());
+		}
+		
+		
+		
+		in.close();
 	}
 }
