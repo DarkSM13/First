@@ -1,17 +1,24 @@
 package SM;
 
-public class Animal {
-
+public enum Animal {
+	CAT("Fergus"),DOG("Fido"),MOUSE("Jerry");
+	
 	private String name;
-	public Animal(String name) {
+	
+	Animal(String name) {
 		this.name=name;
+		
 	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+	public String toString() {
+		return "This is Animal "+name;
+	}
 	
 }
