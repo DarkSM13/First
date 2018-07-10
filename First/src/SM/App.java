@@ -1,9 +1,11 @@
 package SM;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 
 public class App {
@@ -13,13 +15,15 @@ public class App {
 		File file = new File("text.txt");
 		
 		
-		try(BufferedReader br = new BufferedReader(new FileReader(file))){
+		try(BufferedWriter bw = new BufferedWriter(new FileWriter(file))){
 			
-			String line;
+			bw.write("This is new line in the file");
+			bw.newLine();
+			bw.write("This is second line in the file");
 			
-			while((line=br.readLine())!=null)
-					System.out.println(line);
+			bw.close();
 			
+	
 		} catch (FileNotFoundException e) {
 			System.out.println("Can't find file!");
 			
