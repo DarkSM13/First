@@ -1,31 +1,54 @@
 package SM;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Scanner;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class App {
 
 	
-	public static void main(String[] args) throws FileNotFoundException {
+	public static void main(String[] args) {
 	
 	
-		
-		String filename="C:\\Users\\Developer12\\Desktop\\example.txt";
-		
-		File textFile = new File(filename);
-		
-		System.out.println(textFile.exists());
-		
-		Scanner in = new Scanner(textFile);
-		
-		while(in.hasNextLine()) {
-			String line = in.nextLine();
-			System.out.println(line.toString());
+		File file = new File("text.txt");
+		BufferedReader br=null;
+
+		try {
+			FileReader fr = new FileReader(file);
+			br = new BufferedReader(fr);
+			
+			String line;
+			
+			while((line = br.readLine())!=null)
+				System.out.println(line);
+			
+			
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			System.out.println("File not found:"+file.toString());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			System.out.println("Unable to read file:"+file.toString());
+		}
+	
+		finally {
+			
+			try {
+				br.close();
+			}
+			catch (IOException e) {
+				// TODO Auto-generated catch block
+				System.out.println("Unable to close file:"+file.toString());
+			}
+			catch (NullPointerException ex) {
+				// TODO Auto-generated catch block
+				System.out.println("Null pointer of file:"+file.toString());
+			}
+			
 		}
 		
-		
-		
-		in.close();
+	
 	}
 }
